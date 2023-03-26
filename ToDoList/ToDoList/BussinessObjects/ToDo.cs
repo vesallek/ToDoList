@@ -16,17 +16,20 @@ namespace ToDoList.BussinessObjects
         
         [Column("name")]
         public string name { get; set; }
+
+        [Column("description")]
+        public string description { get; set; }
         
         [Column("dateWhenFinish")]
-        public DateOnly dateWhenFinish { get; set; }
+        public DateTime dateWhenFinish { get; set; }
         
         [Column("isFinished")]
-        public int isFinished { get; set; }
+        public bool isFinished { get; set; }
         
         [Column("idCategory")]
         public int idCategoryFK { get; set; }
         
         [ForeignKey("idCategoryFK")]
-        public Category category { get; set; }
+        public virtual Category category { get; set; }
     }
 }
